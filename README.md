@@ -8,4 +8,4 @@ Github sendo um sistema de compartilhamento em nuvem de informações e programa
 Informações do projeto:
 
 - Base: 100%
-- Modificações: 0%
+- Modificações: 1% -> Utilizar a Wiki para postar as modificações.
