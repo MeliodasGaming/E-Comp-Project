@@ -9,12 +9,3 @@ Informações do projeto:
 
 - Base: 100%
 - Modificações: 0%
-
-
-
-Observações decididas:
-- Nivel: 255 e Nível de Base: 70
-- Experiência: 10.000 x / 10.000 x
-- Drop Comum: 20%
-- Drop de Cartas MvP/Mini-boss: 2%
-- 3rd Class
