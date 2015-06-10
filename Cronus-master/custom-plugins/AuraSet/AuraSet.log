@@ -1,17 +1,17 @@
-﻿Build started 10/06/2015 00:21:40.
-     1>Project "D:\Github\E-Comp-Project\Cronus-master\custom-plugins\AuraSet.vcxproj" on node 2 (build target(s)).
+﻿Build started 10/06/2015 02:00:21.
+     1>Project "C:\Users\CLIENTE\Documents\GitHub\E-Comp-Project\Cronus-master\custom-plugins\AuraSet.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
          Creating "AuraSet\\AuraSet.unsuccessfulbuild" because "AlwaysCreate" was specified.
        ClCompile:
          All outputs are up-to-date.
        Link:
          All outputs are up-to-date.
-         AuraSet.vcxproj -> D:\Github\E-Comp-Project\Cronus-master\custom-plugins\..\plugins\AuraSet.dll
+         AuraSet.vcxproj -> C:\Users\CLIENTE\Documents\GitHub\E-Comp-Project\Cronus-master\custom-plugins\..\plugins\AuraSet.dll
        FinalizeBuildStatus:
          Deleting file "AuraSet\\AuraSet.unsuccessfulbuild".
          Touching "AuraSet\\AuraSet.lastbuildstate".
-     1>Done Building Project "D:\Github\E-Comp-Project\Cronus-master\custom-plugins\AuraSet.vcxproj" (build target(s)).
+     1>Done Building Project "C:\Users\CLIENTE\Documents\GitHub\E-Comp-Project\Cronus-master\custom-plugins\AuraSet.vcxproj" (build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:00.06
+Time Elapsed 00:00:00.03
