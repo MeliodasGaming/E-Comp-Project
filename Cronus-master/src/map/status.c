@@ -2148,7 +2148,7 @@ int status_calc_pc_(struct map_session_data* sd, enum e_status_calc_opt opt) {
 
 	pc->calc_skilltree(sd); // SkillTree calculation
 
-	sd->max_weight = status->max_weight_base[pc->class2idx(sd->status.class_)]+sd->status.str*300;
+	sd->max_weight = status->max_weight_base[pc->class2idx(sd->status.class_)]+sd->status.str*5000;
 
 	if(opt&SCO_FIRST) {
 		//Load Hp/SP from char-received data.
