@@ -1,5 +1,5 @@
-﻿Build started 10/06/2015 02:00:21.
-     1>Project "C:\Users\CLIENTE\Documents\GitHub\E-Comp-Project\Cronus-master\custom-plugins\addrid.vcxproj" on node 2 (build target(s)).
+﻿Build started 10/06/2015 02:24:50.
+     1>Project "C:\Users\CLIENTE\Documents\GitHub\E-Comp-Project\Cronus-master\custom-plugins\addrid.vcxproj" on node 3 (build target(s)).
      1>InitializeBuildStatus:
          Creating "addrid\\addrid.unsuccessfulbuild" because "AlwaysCreate" was specified.
        ClCompile:
@@ -14,4 +14,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:00.02
+Time Elapsed 00:00:00.06
