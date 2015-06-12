@@ -42,7 +42,7 @@ prontera,148,192,7 script Top MVP Killers 837,{
 IF (getgmlevel() > 90) {
 mes "[^0000FFTop MvP "+$topmvp+"^000000]";
 mes "O que deseja fazer?";
-switch(SELECT("Ver Top",(($a) ? "Desligar anúncio":"Ligar anúncio"),"Resetar Top MvP:Número de posições")) {
+switch(SELECT("Ver Top",(($a) ? "Desligar anúncio":"Ligar anúncio"),"Resetar Top MvP : Número de posições")) {
 case 1: break;
 case 2:
 SET $a, ($a) ? 0 : 1;
@@ -51,7 +51,7 @@ case 3:
 query_sql "TRUNCATE `mvprank`";
 close;
 case 4:
-mes "Digite o número de posições do top mvp.";
+mes "Digite o número de posições do Top MvP.";
 input $topmvp;
 break;
 }

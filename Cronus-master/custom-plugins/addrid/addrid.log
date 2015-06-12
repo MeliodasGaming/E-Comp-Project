@@ -1,17 +1,17 @@
-﻿Build started 11/06/2015 22:57:52.
-     1>Project "D:\Github\E-Comp-Project\Cronus-master\custom-plugins\addrid.vcxproj" on node 3 (build target(s)).
+﻿Build started 12/06/2015 01:03:11.
+     1>Project "C:\Users\CLIENTE\Documents\GitHub\E-Comp-Project\Cronus-master\custom-plugins\addrid.vcxproj" on node 3 (build target(s)).
      1>InitializeBuildStatus:
          Creating "addrid\\addrid.unsuccessfulbuild" because "AlwaysCreate" was specified.
        ClCompile:
          All outputs are up-to-date.
        Link:
          All outputs are up-to-date.
-         addrid.vcxproj -> D:\Github\E-Comp-Project\Cronus-master\custom-plugins\..\plugins\addrid.dll
+         addrid.vcxproj -> C:\Users\CLIENTE\Documents\GitHub\E-Comp-Project\Cronus-master\custom-plugins\..\plugins\addrid.dll
        FinalizeBuildStatus:
          Deleting file "addrid\\addrid.unsuccessfulbuild".
          Touching "addrid\\addrid.lastbuildstate".
-     1>Done Building Project "D:\Github\E-Comp-Project\Cronus-master\custom-plugins\addrid.vcxproj" (build target(s)).
+     1>Done Building Project "C:\Users\CLIENTE\Documents\GitHub\E-Comp-Project\Cronus-master\custom-plugins\addrid.vcxproj" (build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:00.90
+Time Elapsed 00:00:00.06

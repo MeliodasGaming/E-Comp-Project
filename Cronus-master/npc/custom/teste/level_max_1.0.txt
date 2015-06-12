@@ -21,7 +21,7 @@ OnPCBaseLvUpEvent:
 //=====================
 	
 	if(BaseLevel == @levelmax){
-	announce "O Jogador "+strcharinfo(0)+" alcançou o nível "+@levelmax+"! Parabéns a ele(a)!",8;
+	announce "O jogador "+strcharinfo(0)+" alcançou o nível "+@levelmax+"! Parabéns a ele (a)!",8;
 	end;
 	}
 }
