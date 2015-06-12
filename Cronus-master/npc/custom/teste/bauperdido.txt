@@ -1,0 +1,34 @@
+sec_in02,127,57,5	script	Controle de Baús::bau	869,{
+mes "Ops?";
+//menu "NÃO SOLTAR O BAÚ",nem,"SOLTAR BAÚ PARA TESTE",teste;
+close;
+
+nem:
+close;
+
+teste:
+monster	"prontera",1,1,	"Baú ragLOST",1732,1,"bau::OnGanhou";
+close;
+end;
+
+OnClock0930:
+monster	"prontera",1,1,	"Baú ragLOST",1732,1,"bau::OnGanhou";
+announce "ragLOST.com: Atenção, foi lançado um baú em algum lugar da cidade de Prontera, quem matá-lo ganhará as bonificações concedidas pelo mesmo!",0,0xFF0000;
+end;
+
+OnClock1430:
+monster	"prontera",1,1,	"Baú ragLOST",1732,1,"bau::OnGanhou";
+announce "ragLOST.com: Atenção, foi lançado um baú em algum lugar da cidade de Prontera, quem matá-lo ganhará as bonificações concedidas pelo mesmo!",0,0xFF0000;
+end;
+
+OnClock2230:
+monster	"prontera",1,1,	"Baú ragLOST",1732,1,"bau::OnGanhou";
+announce "ragLOST.com: Atenção, foi lançado um baú em algum lugar da cidade de Prontera, quem matá-lo ganhará as bonificações concedidas pelo mesmo!",0,0xFF0000;
+end;
+
+OnGanhou:
+set @random, rand(1,15);
+getitem 9999,@random;
+announce "ragLOST.com: OOoOo! Parabéns ao jogador "+strcharinfo(0)+", quebrando o baú escondido em Prontera, ele acaba de receber uma bonificação de "+@random+" Cristais Preciosos!",0,0xFF0000;
+end;
+}

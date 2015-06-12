@@ -1,0 +1,108 @@
+// =========== Script ==============================================================
+// Estilista
+// =========== Versão ==============================================================
+// 1.0
+// =========== Npc By ==============================================================
+// Rafael
+// =========== Changelog ===========================================================
+// 1.0 Iniciado Npc [Rafael]
+// - Obs: Configuraçoes, Sprite e Coordenadas By Mehah, retirada do script original.
+// =================================================================================
+prontera.gat,170,180,1	script	Estilista	122,{
+
+// Configurações
+//=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+	set @npc$,"^FF8000 Estilista ^000000";
+	set @roupa,4; // (Troque 0, pelo limite de cores para roupa) [Oficial: 4]
+	set @cabelo,8; // (Troque 0, pelo limite de cores para cabelo) [Oficial: 8]
+//=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+	set @ESTILISTA,0;
+	mes @npc$;
+	mes "Bem vindo, ^ff0000 "+ strcharinfo(0) +" ^000000!";
+	mes "Eu posso:";
+	mes "- Trocar Estilo de Cabelo";
+	mes "- Tingir Cabelo";
+	mes "- Mudar Cor Da Roupa.";
+	mes "O que você deseja?";
+	next;
+	menu "- Trocar Estilo de Cabelo!",Option1,
+	"- Tingir o Cabelo!",Option2,
+	"- Mudar Cor da Roupa!",Option3,
+	"- Sair!",Option4;
+
+	Option1:
+		next;
+		mes @npc$;
+		mes "Eu vou passando os Estilos de Cabelo e você escolhe qual quer!";
+		next;
+	Estilo:
+		if(@TYPE == 0) set @ESTILISTA, @ESTILISTA +1;
+		if(@TYPE == 1) set @ESTILISTA, @ESTILISTA -1;
+		mes "^ff8000 Estilo Número ^d2a902 "+ @ESTILISTA +" ^000000 ^ff0000 !! ^000000";
+		setlook 1,@ESTILISTA;
+		specialeffect2 56;
+		menu "- Próximo!",EstiloPro,"- Anterior!",EstiloAnt,"- Fechar!",Option4;
+	EstiloPro:
+		if(@ESTILISTA >= 23) goto EstiloFim;
+		set @TYPE,0;
+		goto Estilo;
+	EstiloAnt:
+		set @TYPE,1;
+		goto Estilo;
+	EstiloFim:
+		next;
+		mes @npc$;
+		mes "Acabaram os estilos de cabelo!";
+		close;
+
+	Option2:
+		next;
+		mes "Eu vou passando as Cores de Cabelo e você escolhe qual quer!";
+		next;
+	CoresC:
+		if(@TYPE == 0) set @ESTILISTA, @ESTILISTA +1;
+		if(@TYPE == 1) set @ESTILISTA, @ESTILISTA -1;
+		mes "^ff8000 Estilo Número ^d2a902 "+ @ESTILISTA +" ^000000 ^ff0000 !! ^000000";
+		setlook 6,@ESTILISTA;
+		specialeffect2 54;
+		menu "- Próximo!",CabeloPro,"- Anterior!",CabeloAnt,"- Fechar!",Option4;
+	CabeloPro:
+		if(@ESTILISTA >= @cabelo) goto CabeloFim;
+		set @TYPE,0;
+		goto CoresC;
+	CabeloAnt:
+		set @TYPE,1;
+		goto CoresC;
+	CabeloFim:
+		next;
+		mes @npc$;
+		mes "Acabaram as cores de cabelo!";
+		close;
+
+	Option3:
+		next;
+		mes "Eu vou passando as Cores da Roupa e você escolhe qual quer!";
+		next;
+	CoresR:
+		if(@TYPE == 0) set @ESTILISTA, @ESTILISTA +1;
+		if(@TYPE == 1) set @ESTILISTA, @ESTILISTA -1;
+		mes "^ff8000 Estilo Número ^d2a902 "+ @ESTILISTA +" ^000000 ^ff0000 !! ^000000";
+		setlook 7,@ESTILISTA;
+		specialeffect2 55;
+		menu "- Próximo!",RoupaPro,"- Anterior!",RoupaAnt,"- Fechar!",Option4;
+	RoupaPro:
+		if(@ESTILISTA >= @roupa) goto RoupaFim;
+		set @TYPE,0;
+		goto CoresR;
+	RoupaAnt:
+		set @TYPE,1;
+		goto CoresR;
+	RoupaFim:
+		next;
+		mes @npc$;
+		mes "Acabaram as cores de roupa!";
+		close;
+
+	Option4:
+		end;
+}

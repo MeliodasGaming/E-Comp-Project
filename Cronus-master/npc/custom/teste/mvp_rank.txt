@@ -1,0 +1,70 @@
+//=========================================================
+// Cronus Script - Ranking MVP
+//=========================================================
+// Escrito por Kant - 18/02/2011
+//=========================================================
+// 20/05/2014 -- mcsxD // Criação Tabela SQl automatico e 
+//                          Nick top 1º no waitingroom 
+//=========================================================
+//-Mostra um top com os players que mais mataram
+// mvps no servidor.
+//-Configurações disponíveis in-game: anúncio quando um
+// player matar um mvp, número de posições mostradas e
+// resetar top.
+//-Tabela sql será criada automaticamente.
+//=========================================================
+//-Fiz esse npc a fim de melhorar um pouco  o script do
+// Rokimoki e fazer uma versão sql, usando uma tabela 
+// para guardar os dados, facilitando o uso em sites e cp.
+//-Agradecimentos ao Rokimoki por ter feito a array com AS
+// ids dos mvps.
+//=========================================================
+ 
+- script Rank MvP -1,{
+OnInit:
+query_sql "CREATE TABLE IF NOT EXISTS `mvprank` (`id` INT( 11 ) UNSIGNED NOT NULL DEFAULT '0',`name` VARCHAR( 23 ) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL ,`mvpkills` BIGINT UNSIGNED NOT NULL ,UNIQUE (`id`)) ENGINE = MYISAM";
+SET $a, 1;
+SET $topmvp, 10;
+setarray $mvpid[0],1511,1251,1734,1647,1651,1785,1630,1399,1039,1874,2068,1272,1719,1046,1389,1885,1876,1112,1115,1957,1418,1871,1252,1768,1086,1688,1646,1373,1147,1492,1059,1150,1956,2022,1087,1190,1038,1157,1159,1502,1623,1650,1583,1779,1708,1312,1751,1685,1648,1649,1917,1658,1832,1916,2000,2001,2002,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2021,2024,2025,2026,2027,2028,2032;
+end;
+ 
+OnNPCKillEvent:
+FOR (SET .@i, 0; .@i < getarraysize($mvpid); SET .@i, .@i + 1) {
+IF (killedrid == $mvpid[.@i]) SET .@s,1;
+}
+IF (!.@s) end;
+IF ($a) announce "O player [ "+strcharinfo(0)+" ] matou o MvP [ "+getmonsterinfo(killedrid,0)+" ] no mapa [ "+strcharinfo(3)+" ]",bc_blue|bc_all;
+query_sql "INSERT INTO mvprank (id, name, mvpkills) values('"+getcharid(0)+"','"+strcharinfo(0)+"','1') ON DUPLICATE KEY UPDATE mvpkills = mvpkills + '1'";
+end;
+}
+ 
+prontera,148,192,7 script Top MVP Killers 837,{
+IF (getgmlevel() > 90) {
+mes "[^0000FFTop MvP "+$topmvp+"^000000]";
+mes "O que deseja fazer?";
+switch(SELECT("Ver Top",(($a) ? "Desligar anúncio":"Ligar anúncio"),"Resetar Top MvP:Número de posições")) {
+case 1: break;
+case 2:
+SET $a, ($a) ? 0 : 1;
+close;
+case 3:
+query_sql "TRUNCATE `mvprank`";
+close;
+case 4:
+mes "Digite o número de posições do top mvp.";
+input $topmvp;
+break;
+}
+next;
+}
+query_sql "SELECT `name`,`mvpkills` FROM `mvprank` ORDER BY `mvpkills` DESC LIMIT "+$topmvp+"",@names$,@mvpkills;
+mes "[^0000FFTop MvP "+$topmvp+"^000000]";
+FOR (SET @c, 0; @c < $topmvp; SET @c, @c + 1) {
+mes "^FF0000"+(@c+1)+"º^000000 ^0000FF"+@names$[@c]+"^000000 matou ^FF0000"+@mvpkills[@c]+"^000000 MvP's.";
+}
+close;
+OnInit:
+query_sql "SELECT `name`,`mvpkills` FROM `mvprank` ORDER BY `mvpkills` DESC LIMIT 1",.@names$,.@mvpkills;
+waitingroom .@names$,0;
+end;
+}
