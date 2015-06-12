@@ -17,7 +17,7 @@
 
 OnPCBaseLvUpEvent:
 //=====================
-	set @levelmax, 150; //Nível máximo do seu servidor
+	set @levelmax, 255; //Nível máximo do seu servidor
 //=====================
 	
 	if(BaseLevel == @levelmax){
