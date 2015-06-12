@@ -568,7 +568,7 @@ ordeal_1-1,246,245,5	script	Devil Square#ds_04	733,{
 	mes "^483D8B[Recepcionista da Saída]^000000";
 	mes "Deseja retornar a Prontera?";
 	next;
-	if( Select ("Sim.","Não.") == 1) {
+	if( select ("Sim.","Não.") == 1) {
 		mes "^483D8B[Recepcionista da Saída]^000000";
 		mes "Muito bem, boa viajem!";
 		close2;

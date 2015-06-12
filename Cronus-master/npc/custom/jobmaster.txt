@@ -22,16 +22,16 @@ prontera,153,193,6	script	Job Master	2_F_MAGICMASTER,{
 	mes "[Job Master]";
 	if (Class > Job_Soul_Linker) {
 		mes "Não há mais classes disponíveis.";
-		fechar;
+		close;
 	}
 	if (checkfalcon() || checkcart() || checkmount() || hascashmount()) {
 		mes "Por favor, remova seu "+((checkfalcon())?"falcon":"")+((checkcart())?"cart":"")+((checkmount() || hascashmount())?"mount":"")
 		    +" antes de prosseguir.";
-		fechar;
+		close;
 	}
 	if (.skill_point_check && SkillPoint > 0) {
 		mes "Por favor, distribua todos seus pontos de habilidade, antes de prosseguir.";
-		fechar;
+		close;
 	}
 
 	.@eac = eaclass();
@@ -48,19 +48,19 @@ prontera,153,193,6	script	Job Master	2_F_MAGICMASTER,{
 		}
 		if (Class > Job_Crusader2) {
 			mes "Trocar para a terceira classe?";
-			Próximo;
+			next;
 			Job_Menu(roclass(.@eac|EAJL_THIRD));
-			Fechar;
+			close;
 		}
 		while (true) {
 			mes "Escolha uma opção.";
-			Próximo;
+			next;
 			.@choice = select(" ~ ^0055FFRebirth^000000:"+(.third_classes ? " ~ ^FF0000Third Class^000000" : "")+": ~ ^777777Cancel^000000");
 			if (.@choice == 3)
 				close;
 			mes "[Job Master]";
 			mes "Você tem certeza?";
-			Próximo;
+			next;
 			if (.@choice == 1)
 				Job_Menu(Job_Novice_High);
 			else
@@ -83,17 +83,17 @@ prontera,153,193,6	script	Job Master	2_F_MAGICMASTER,{
 			    + (BaseLevel < .rebirth_blevel ? ((.rebirth_blevel - BaseLevel) +" more base levels "+ (JobLevel < .@required_jlevel ? "and " : "")) : "")
 			    + (JobLevel < .@required_jlevel ? (.@required_jlevel - JobLevel) +" more job levels " : "")
 			    + "Para continuar.";
-			fechar;
+			close;
 		}
 		mes "Trocar para"+jobname(.@newclass)+"?";
-		Próximo;
+		next;
 		Job_Menu(.@newclass);
-		Fechar;
+		close;
 	}
 	if (.@eac&EAJL_2)
 		if (.@eac&(EAJL_UPPER|EAJL_BABY) || roclass(.@eac|EAJL_UPPER) == -1) {
 			mes "Não há mais classes disponíveis.";
-			Fechar;
+			close;
 		}
 	if ((.@eac&EAJ_BASEMASK) == EAJ_NOVICE) {
 		if (JobLevel < .jobchange_first) {
@@ -113,7 +113,7 @@ prontera,153,193,6	script	Job Master	2_F_MAGICMASTER,{
 		} else {
 			mes "Ocorreu um erro.";
 		}
-		fechar;
+		close;
 	}
 	if (roclass(.@eac|EAJL_2_1) == -1 || roclass(.@eac|EAJL_2_2) == -1) {
 		mes "Não há, mais classes disponíveis.";
@@ -126,7 +126,7 @@ prontera,153,193,6	script	Job Master	2_F_MAGICMASTER,{
 	} else {
 		Job_Menu(.@job1, .@job2);
 	}
-	Fechar;
+	close;
 
 function Job_Menu {
 	while (true) {
@@ -136,7 +136,7 @@ function Job_Menu {
 			for (.@i = 0; .@i < getargcount(); ++.@i)
 				.@menu$ += " ~ "+jobname(getarg(.@i))+":";
 			.@menu$ += " ~ ^777777Cancel^000000";
-			Próximo;
+			next;
 			.@newjob = getarg(select(.@menu$)-1, 0);
 			if (!.@newjob) close;
 			if ((.@newjob == Job_SuperNovice || .@newjob == Job_Super_Baby) && BaseLevel < .supernovice_level) {
@@ -146,7 +146,7 @@ function Job_Menu {
 			}
 			mes "[Job Master]";
 			mes "Você tem certeza?";
-			Próximo;
+			next;
 		} else {
 			.@newjob = getarg(0);
 		}
