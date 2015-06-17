@@ -1,5 +1,5 @@
-﻿Build started 14/06/2015 19:35:05.
-     1>Project "C:\Users\CLIENTE\Documents\GitHub\E-Comp-Project\Cronus-master\custom-plugins\VisibleMonstersHP.vcxproj" on node 2 (build target(s)).
+﻿Build started 16/06/2015 18:48:23.
+     1>Project "C:\Users\CLIENTE\Documents\GitHub\E-Comp-Project\Cronus-master\custom-plugins\VisibleMonstersHP.vcxproj" on node 4 (build target(s)).
      1>InitializeBuildStatus:
          Creating "VisibleMonstersHP\\VisibleMonstersHP.unsuccessfulbuild" because "AlwaysCreate" was specified.
        ClCompile:
@@ -19,4 +19,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:06.74
+Time Elapsed 00:00:05.06
