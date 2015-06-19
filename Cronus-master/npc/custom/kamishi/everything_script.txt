@@ -10,7 +10,7 @@
 
 prontera,179,27,5	script	#121345	111,{
 	end;
-	OnPcLoginEvent:
+	OnPCLoginEvent:
 		if (!setPaletteToProtectedNumber == 2){
 			callfunc("setlook2", 6, realPlayerLookHair);
 			callfunc("setlook2", 7, realPlayerLookClothes);
@@ -44,7 +44,7 @@ function	script	getProtectedPal	{
 		if(@i < 5) return @i; // set 5 to your unprotected clothes palette #.
 	}
 	if(@type == 6){
-		if(@i < 10) return @i; // set 10 to your unprotected hair palette #.
+		if(@i < 9) return @i; // set 9 to your unprotected hair palette #.
 	}
 
 	set @m, @i / 127; 
@@ -62,9 +62,9 @@ function	script	setlook2	{
 	if(@type == 6){
 		set realPlayerLookHair, @i;		
 	
-	}else if (@type == 7){
+	}	else if (@type == 7){
 		set realPlayerLookClothes, @i;		
-	}else{
+	}	else	{
 		setlook @type, @i;
 		return;
 	}
@@ -82,7 +82,7 @@ function	script	changelook2	{
 	
 	if((@type == 6) || (@type == 7)){
 		changelook @type, callfunc("getProtectedPal", @i, @type);
-	}else{
+	}	else	{
 		changelook @type, @i;
 	}
 	
@@ -95,9 +95,9 @@ function	script	getlook2	{
 	
 	if(@type == 6){
 		return realPlayerLookHair;		
-	}else if (@type == 7){
+	}	else if (@type == 7)	{
 		return realPlayerLookClothes;		
-	}else{
+	}	else	{
 		return getlook(@type);
 	}
 }

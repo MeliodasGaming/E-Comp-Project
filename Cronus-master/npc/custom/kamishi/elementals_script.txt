@@ -8,9 +8,9 @@
 // palette file numbers.
 // =====================================================
 
-prontera,179,27,5	script	#121345	111,{
+prontera,179,27,5	script	Elemental	111,{
 	end;
-	OnPcLoginEvent:
+	OnPCLoginEvent:
 		if (!setPaletteToProtectedNumber == 2){
 			callfunc("setlook2", 6, realPlayerLookHair);
 			callfunc("setlook2", 7, realPlayerLookClothes);

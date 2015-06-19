@@ -76,7 +76,7 @@ function	script	unequipRaceHat	{
 //================================================
 
 -	script	Race Master	-1,{
-	OnPCLoginEvent:
+	OnPcLoginEvent:
 		callfunc "setRaceHat";
 		end;
 }

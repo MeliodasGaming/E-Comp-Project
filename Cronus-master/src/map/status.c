@@ -2148,7 +2148,7 @@ int status_calc_pc_(struct map_session_data* sd, enum e_status_calc_opt opt) {
 
 	pc->calc_skilltree(sd); // SkillTree calculation
 
-	sd->max_weight = status->max_weight_base[pc->class2idx(sd->status.class_)]+sd->status.str*5000;
+	sd->max_weight = status->max_weight_base[pc->class2idx(sd->status.class_)]+sd->status.str*300;
 
 	if(opt&SCO_FIRST) {
 		//Load Hp/SP from char-received data.
@@ -2222,7 +2222,7 @@ int status_calc_pc_(struct map_session_data* sd, enum e_status_calc_opt opt) {
 	}
 	bstatus->aspd_rate = 1000;
 	bstatus->ele_lv = 1;
-	bstatus->race = RC_DEMIHUMAN;
+	bstatus->race = RC_PLAYER;
 
 	// Autobonus
 	pc->delautobonus(sd,sd->autobonus,ARRAYLENGTH(sd->autobonus),true);
@@ -3032,7 +3032,7 @@ int status_calc_npc_(struct npc_data *nd, enum e_status_calc_opt opt) {
 
 		nstatus->def_ele = ELE_NEUTRAL;
 		nstatus->ele_lv = 1;
-		nstatus->race = RC_DEMIHUMAN;
+		nstatus->race = RC_PLAYER;
 		nstatus->size = nd->size;
 		nstatus->rhw.range = 1 + nstatus->size;
 		nstatus->mode = (MD_CANMOVE|MD_CANATTACK);
@@ -9932,11 +9932,11 @@ int status_change_end_(struct block_list* bl, enum sc_type type, int tid, const 
 				if (src && sc2 && sc2->data[SC_RG_CCONFINE_M]) {
 					//If status was already ended, do nothing.
 					//Decrease count
-					if (--(sc2->data[SC_RG_CCONFINE_M]->val1) <= 0) //No more holds, free him up.
+					if (--(sc2->data[SC_RG_CCONFINE_M]->val2) <= 0) //No more holds, free him up.
 						status_change_end(src, SC_RG_CCONFINE_M, INVALID_TIMER);
 				}
 			}
-			/* Fall through */
+			break;
 		case SC_RG_CCONFINE_M:
 			if (sce->val2 > 0) {
 				//Caster has been unlocked... nearby chars need to be unlocked.

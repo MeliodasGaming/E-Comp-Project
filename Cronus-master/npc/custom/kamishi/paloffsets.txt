@@ -42,8 +42,8 @@ OnInit:
 	setarray $RacePals[21*4], 1340+.@offh,1372+.@offh,1340+.@offc,1372+.@offc;  // Brown PPL
 	
 	/* Define Races Names */
-	setarray $RaceNames$[0], "Human", "Dark Elf", "Light Elf", "Merman", "Orc", "Vampire", "Beast", "Demon", "Dragoon", "Light Soul", "Dark Soul";
-	setarray $RaceNames$[11], "Earth Element", "Wind Element", "Fire Element", "Water Element", "Electric Element", "Element Shadow", "Element Ghost", "Element Holy", "Element Poison", "Element Undead", "Brown Skin";
+	setarray $RaceNames$[0], "Human", "Dark Elf", "Light Elf", "Merman", "Orc", "Vampire", "Beast", "Dragoon", "Demon", "Light Soul", "Dark Soul";
+	setarray $RaceNames$[11], "Earth Element", "Wind Element", "Water Element", "Fire Element", "Electric Element", "Element Shadow", "Element Ghost", "Element Poison", "Element Holy", "Element Undead", "Brown Skin";
 	end;
 	
 	

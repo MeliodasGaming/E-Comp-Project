@@ -68,7 +68,7 @@ prontera,138,195,5	script	Race Master	897,{
 	mes "I can help you to change your Human essence.";
 	mes "Which race are you interested in?";
 	next;
-	switch(select("Night Elf:Light Elf:Merman:Orc:Vampire:Lycan:Dragoon:Demon:Dark Soul:Light Soul:Earth Element:Wind Element:Water Element:Fire Element:Electric Element:Shadow Element:Ghost Element:Poison Element:Holy Element:Undead Element"))
+	switch(select("Dark Elf:Light Elf:Merman:Orc:Vampire:Lycan:Dragoon:Demon:Light Soul:Dark Soul:Earth Element:Wind Element:Water Element:Fire Element:Electric Element:Shadow Element:Ghost Element:Poison Element:Holy Element:Undead Element"))
 	{
 		case 1: //Dark Elf
 				callfunc "BecomeRace", 1;
@@ -94,11 +94,11 @@ prontera,138,195,5	script	Race Master	897,{
 				callfunc "BecomeRace", 6;
 				break;
 
-		case 7: //Dragon
+		case 7: //Demon
 				callfunc "BecomeRace", 7;
 				break;
 
-		case 8: //Demon
+		case 8: //Dragon
 				callfunc "BecomeRace", 8;
 				break;
 			
@@ -118,11 +118,11 @@ prontera,138,195,5	script	Race Master	897,{
 				callfunc "BecomeRace", 12;
 				break;
 		
-		case 13: //Water
+		case 13: //Fire
 				callfunc "BecomeRace", 13;
 				break;
 				
-		case 14: //Fire
+		case 14: //Water
 				callfunc "BecomeRace", 14;
 				break;
 				
@@ -196,83 +196,83 @@ function	script	setRaceHat	{
 	switch(race_id)
 	{
 		case 1: // Dark Elf
-			setlook 5,937+.@off;	
+			setlook 5,3002+.@off;	
 			break;
 
 		case 2: // Light Elf
-			setlook 5,936+.@off;	
+			setlook 5,3001+.@off;	
 			break;
 
 		case 3: // Merman
-			setlook 5,940+.@off;	
+			setlook 5,3005+.@off;	
 			break;
 		
 		case 4: // Orc
-			setlook 5,941+.@off;	
+			setlook 5,3006+.@off;	
 			break;
 			
 		case 5: // Vampire
-			setlook 5,938+.@off;	
+			setlook 5,3003+.@off;	
 			break;
 		
 		case 6: // Beast
-			setlook 4,939+.@off;	
+			setlook 4,3004+.@off;	
 			break;
 			
 		case 7: // Dragoon
-			setlook 4,942+.@off;	
+			setlook 4,3007+.@off;	
 			break;
 			
 		case 8: // Demon
-			setlook 5,943+.@off;	
+			setlook 5,3008+.@off;	
 			break;
 		
 		case 9: // DarkSoul
-			setlook 3,944+.@off;	
+			setlook 3,3010+.@off;	
 			break;
 			
 		case 10: // LightSoul
-			setlook 3,945+.@off;	
+			setlook 3,3009+.@off;	
 			break;
 			
 		case 11: // Earth
-			setlook 5,946+.@off;	
+			setlook 5,3011+.@off;	
 			break;
 
 		case 12: // Wind
-			setlook 5,947+.@off;	
+			setlook 5,3012+.@off;	
 			break;
 
 		case 13: // Fire
-			setlook 5,948+.@off;	
+			setlook 5,3013+.@off;	
 			break;
 		
 		case 14: // Water
-			setlook 5,949+.@off;	
+			setlook 5,3014+.@off;	
 			break;
 			
 		case 15: // Electric
-			setlook 5,950+.@off;	
+			setlook 5,3015+.@off;	
 			break;
 		
 		case 16: // Shadow
-			setlook 4,951+.@off;	
+			setlook 4,3016+.@off;	
 			break;
 			
 		case 17: // Ghost
-			setlook 4,952+.@off;	
+			setlook 4,3017+.@off;	
 			break;
 			
-		case 18: // Holy
-			setlook 5,953+.@off;	
+		case 18: // Poison
+			setlook 5,3018+.@off;	
 			break;
 		
-		case 19: // Poison
-			setlook 3,954+.@off;	
+		case 19: // Holy
+			setlook 3,3019+.@off;	
 			break;
 			
 		case 20: // Undead
-			setlook 3,955+.@off;	
+			setlook 3,3020+.@off;	
 			break;
 
 		default: //Human
@@ -358,11 +358,11 @@ function	script	unsetRaceHat	{
 			setlook 4,0;	
 			break;
 			
-		case 18: // Holy
+		case 18: // Poison
 			setlook 5,0;	
 			break;
 		
-		case 19: // Poison
+		case 19: // Holy
 			setlook 3,0;	
 			break;
 			
