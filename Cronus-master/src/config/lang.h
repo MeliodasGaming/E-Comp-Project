@@ -1,1 +1,0 @@
-#define ce_portuguese
